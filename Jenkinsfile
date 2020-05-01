@@ -1,7 +1,7 @@
 import groovy.json.JsonBuilder
 
 node('jenkins-jenkins-slave') {
-  withCredentials([string(credentialsId: 'deepsecurity-key', variable: 'DSKEY')])
+  withCredentials([string(credentialsId: "deepsecurity-key", variable: "DSKEY")])
   withEnv(['REPOSITORY=apache-struts2']) {
     stage('Pull Image from Git') {
       script {
@@ -68,7 +68,7 @@ node('jenkins-jenkins-slave') {
       }
     }
     stage('DS Scan for Recomendations') {
-      sh 'curl -X POST https://app.deepsecurity.trendmicro.com/api/scheduledtasks/133 -H "api-secret-key: '${DSKEY}'" -H "api-version: v1" -H "Content-Type: application/json" -d "{ \\"runNow\\": \\"true\\" }" '
+      sh 'curl -X POST https://app.deepsecurity.trendmicro.com/api/scheduledtasks/133 -H "api-secret-key: "${DSKEY}"" -H "api-version: v1" -H "Content-Type: application/json" -d "{ \\"runNow\\": \\"true\\" }" '
     }
   }
 }
