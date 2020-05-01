@@ -67,7 +67,7 @@ node('jenkins-jenkins-slave') {
       }
     }
     stage('DS Scan for Recomendations') {
-      sh 'curl -X POST https://app.deepsecurity.trendmicro.com/api/scheduledtasks/133 -H "api-secret-key: $deepsecurity-key" -H "api-version: v1" -H "Content-Type: application/json" -d "{ \\"runNow\\": \\"true\\" }" '
+      sh 'curl -X POST https://app.deepsecurity.trendmicro.com/api/scheduledtasks/133 -H "api-secret-key: "$deepsecurity-key"" -H "api-version: v1" -H "Content-Type: application/json" -d "{ \\"runNow\\": \\"true\\" }" '
     }
   }
 }
