@@ -67,7 +67,7 @@ node('jenkins-jenkins-slave') {
       }
     }
     stage('DS Scan for Recomendations') {
-      sh '''curl -X POST https://app.deepsecurity.trendmicro.com/api/scheduledtasks/133 -H "api-secret-key: 6533381E-7A98-8B6B-02A6-32B3A7555128:7FB6C752-7CE0-94D7-5515-BC3C85DFED3E:gT10N2jrgr8AQRxO0s394rak0t/iOncpejm+K9R0Sc0=" -H "api-version: v1" -H "Content-Type: application/json" -d "{ "runNow": "true" }" '''
+      sh 'curl -X POST https://app.deepsecurity.trendmicro.com/api/scheduledtasks/133 -H "api-secret-key: 6533381E-7A98-8B6B-02A6-32B3A7555128:7FB6C752-7CE0-94D7-5515-BC3C85DFED3E:gT10N2jrgr8AQRxO0s394rak0t/iOncpejm+K9R0Sc0=" -H "api-version: v1" -H "Content-Type: application/json" -d """{ \"runNow\": \"true\" }""" '
     }
   }
 }
