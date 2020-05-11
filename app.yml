@@ -3,30 +3,30 @@ kind: Service
 metadata:
   annotations:
     service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
-  name: apache-struts2
+  name: c1-apache-struts2
   labels:
-    app: apache-struts2
+    app: c1-apache-struts2
 spec:
   type: NodePort
   ports:
   - port: 8080
-    name: apache-struts2
+    name: c1-apache-struts2
     targetPort: 8080
     nodePort: 30100
   selector:
-    app: apache-struts2
+    app: c1-apache-struts2
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: apache-struts2
-  name: apache-struts2
+    app: c1-apache-struts2
+  name: c1-apache-struts2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: apache-struts2
+      app: c1-apache-struts2
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -35,11 +35,11 @@ spec:
   template:
     metadata:
       labels:
-        app: apache-struts2
+        app: c1-apache-struts2
     spec:
       containers:
-      - name: apache-struts2
-        image: $K8S_REGISTRY/apache-struts2:latest
+      - name: c1-apache-struts2
+        image: $K8S_REGISTRY/c1-apache-struts2:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
