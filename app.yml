@@ -41,6 +41,11 @@ spec:
       - name: c1-apache-struts2
         image: $K8S_REGISTRY/c1-apache-struts2:latest
         imagePullPolicy: Always
+        env:
+        - name: TREND_AP_KEY
+          value: $APPSEC_KEY
+        - name: TREND_AP_SECRET
+          value: $APPSEC_SECRET
         ports:
         - containerPort: 8080
       imagePullSecrets:
