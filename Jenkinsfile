@@ -62,7 +62,7 @@ node {
                          kubeconfigId: "kubeconfig",
                          enableConfigSubstitution: true,
                          dockerCredentials: [
-                           [credentialsId: "registry-auth", url: "${K8S_REGISTRY}"],
+                           [credentialsId: "ecr:eu-west-1:registry-auth", url: "${K8S_REGISTRY}"],
                          ])
       }
     }
