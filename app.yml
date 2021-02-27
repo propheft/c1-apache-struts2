@@ -47,5 +47,3 @@ spec:
           value: $APPSEC_SECRET
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-      - name: $KUBERNETES_SECRET_NAME
