@@ -42,8 +42,8 @@ spec:
         imagePullPolicy: Always
         env:
         - name: TREND_AP_KEY
-          value: aaaa
+          value: $STRUTS_KEY
         - name: TREND_AP_SECRET
-          value: bbbb
+          value: $STRUTS_SECRET
         ports:
         - containerPort: 8080
