@@ -3,14 +3,14 @@ kind: Service
 metadata:
   annotations:
     service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
   name: c1-apache-struts2
   labels:
     app: c1-apache-struts2
 spec:
   type: LoadBalancer
   ports:
-  - protocol: TCP
-    port: 80
+  - port: 80
     name: c1-apache-struts2
     targetPort: 8080
   selector:
