@@ -15,7 +15,6 @@ node {
     stage('Push Image to Registry') {
       script {
         docker.withRegistry("https://${K8S_REGISTRY}", 'ecr:eu-west-1:registry-auth') {
-          dbuild.push('$BUILD_NUMBER')
           dbuild.push('latest')
         }
       }
