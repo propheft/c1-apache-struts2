@@ -12,7 +12,6 @@ metadata:
     app: c1-apache-struts2
 spec:
   type: LoadBalancer
-  name: c1-apache-struts2
   ports:
   - port: 443
     name: c1-apache-struts2
